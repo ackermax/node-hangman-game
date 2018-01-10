@@ -15,13 +15,35 @@ var Letter = function () {
         }
         this.blankArray.push(singleLetter);
     };
-    
+    //logic to run if a letter is chosen
+    this.letterGuess = function (g) {
+        var g = g.toLowerCase();
+        var choices = this.word.choiceArray;
+        var validChoice = false;
+        var correctGuess = false;
+        //run through the choice array and take the letter out
+        for (var i = 0; i < choices.length; i++) {
+            if (choices[i] === g) {
+                //state that this was a valid choice in the array
+                validChoice = true;
+                //take that choice out of the array so it cannot be chosen again
+                choices.splice(i, 1);
+            }
+        }
+        if (validChoice){
+            console.log("You have made a good choice.");
+        }
+        else {
+            console.log("That choice was not valid. Please select a valid choice.");
+        }
+    };
 };
 
 var max = function () {
     var letter = new Letter;
-    console.log(letter.word.newWord);
-    console.log(letter.blankArray);
+    
+    letter.letterGuess("a");
+    
 };
 
 max();
