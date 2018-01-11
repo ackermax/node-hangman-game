@@ -1,15 +1,6 @@
 var Letter = require("./letter");
 var inquirer = require("inquirer");
-// var max = function () {
-//     var letter = new Letter;
-//     letter.letterGuess("z");
-//     letter.letterGuess("a");
-//     letter.letterGuess("e");
-//     letter.letterGuess("R");
-//     console.log(letter.blankArray);
-// };
 
-// max();
 var points = 0;
 var hangman = function () {
     //let's start the game!
@@ -18,6 +9,7 @@ var hangman = function () {
     var word = new Letter();
     var hangmanWord = word.blankArray.toString();
     hangmanWord = hangmanWord.replace(/,/g, " ");
+    console.log(hangmanWord);
 
     //run some more game logic
     guess(word);
@@ -45,11 +37,11 @@ var guess = function (word) {
             if (hangmanWord === word.word.newWord) {
                 console.log("You guessed the word right! Nice job! Here's another one!");
                 points++;
-                hangmanWord();
+                hangman();
             }
             //otherwise we'll just let you guess a new letter
             else {
-                guess();
+                guess(word);
             }
         }
         //if you have no more guesses
@@ -87,3 +79,14 @@ var guess = function (word) {
 
 console.log("Let's play some hangman!");
 hangman();
+
+// var max = function () {
+//     var letter = new Letter;
+//     letter.letterGuess("z");
+//     letter.letterGuess("a");
+//     letter.letterGuess("2");
+//     letter.letterGuess("R");
+//     console.log(letter.blankArray);
+// };
+
+// max();
