@@ -45,7 +45,7 @@ var Letter = function () {
             }
             //if the guess is correct we say yay
             if (correctGuess) {
-                console.log("yayyyyy");
+                console.log(g + " is in the word. Nice job!");
             }
             //otherwise we remove a guess
             else {

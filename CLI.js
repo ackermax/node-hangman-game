@@ -1,10 +1,12 @@
+//npm requirements
 var Letter = require("./letter");
 var inquirer = require("inquirer");
 
+//game score
 var points = 0;
-var hangman = function () {
-    //let's start the game!
 
+//function to start the game
+var hangman = function () {
     //first we get the new word.
     var word = new Letter();
     var hangmanWord = word.blankArray.toString();
@@ -16,6 +18,7 @@ var hangman = function () {
 
 };
 
+//function to grab our guess and run some logic
 var guess = function (word) {
     inquirer.prompt([
         {
@@ -77,16 +80,6 @@ var guess = function (word) {
     });
 };
 
+//how we actually start the game!
 console.log("Let's play some hangman!");
 hangman();
-
-// var max = function () {
-//     var letter = new Letter;
-//     letter.letterGuess("z");
-//     letter.letterGuess("a");
-//     letter.letterGuess("2");
-//     letter.letterGuess("R");
-//     console.log(letter.blankArray);
-// };
-
-// max();
