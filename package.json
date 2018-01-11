@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/ackermax/node-hangman-game#readme",
   "dependencies": {
-    "inquirer": "^5.0.0",
-    "random-movie": "^1.4.3"
+    "inquirer": "^5.0.0"
   }
 }

@@ -17,10 +17,7 @@ var Word = function () {
     var indexNumber = Math.floor(Math.random() * 100 + 1);
     //grab the movie with the indexNumber
     this.newWord = newMovie[indexNumber];
-
 };
-
-
 
 module.exports = Word;
 

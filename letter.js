@@ -30,20 +30,35 @@ var Letter = function () {
                 choices.splice(i, 1);
             }
         }
-        if (validChoice){
-            console.log("You have made a good choice.");
+        //if the choice was valid we check to see if it is in the word
+        if (validChoice) {
+            var word = this.word.newWord;
+            for (var i = 0; i < word.length; i++) {
+                //if the choice is at that spot in the word...
+                if (g === word.charAt(i).toLowerCase()) {
+                    //we splice in the letter for the blank
+                    var rightLetter = word.charAt(i);
+                    this.blankArray.splice(i, 1, rightLetter);
+                    //we also set correctGuess to true
+                    correctGuess = true;
+                }
+            }
+            //if the guess is correct we say yay
+            if (correctGuess) {
+                console.log("yayyyyy");
+            }
+            //otherwise we remove a guess
+            else {
+                this.word.chances--;
+                console.log("")
+                console.log("Guesses remaining: " + this.word.chances);
+            }
         }
+        //otherwise we make them pick a valid choice
         else {
             console.log("That choice was not valid. Please select a valid choice.");
         }
     };
 };
 
-var max = function () {
-    var letter = new Letter;
-    
-    letter.letterGuess("a");
-    
-};
-
-max();
+module.exports = Letter;
