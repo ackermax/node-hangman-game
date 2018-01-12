@@ -1,3 +1,4 @@
+//grab our constructor from word.js
 var Word = require("./word");
 
 var Letter = function () {
@@ -50,7 +51,6 @@ var Letter = function () {
             //otherwise we remove a guess
             else {
                 this.word.chances--;
-                console.log("")
                 console.log("Guesses remaining: " + this.word.chances);
             }
         }
@@ -61,5 +61,5 @@ var Letter = function () {
     };
 };
 
-
+//export our Letter constructor (that contains our word too!)
 module.exports = Letter;

@@ -1,4 +1,4 @@
-//npm requirements
+//npm requirements and Letter constructor
 var Letter = require("./letter");
 var inquirer = require("inquirer");
 
